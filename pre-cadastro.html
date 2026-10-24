@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pré-cadastro para treinar com a Propulse Running.">
+  <title>Propulse / Pré-cadastro</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="lead-page">
+  <header class="lead-header">
+    <a class="brand brand-wordmark" href="index.html" aria-label="Voltar para a Propulse"><span class="brand-logo-crop"><img src="img/logo/Text.svg" alt="Propulse Running"></span></a>
+    <span class="lead-header-note">Pré-cadastro / 01</span>
+  </header>
+
+  <main class="lead-main">
+    <div class="lead-grid">
+      <section class="lead-intro" aria-labelledby="lead-title">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Treino com direção</p>
+        <h1 id="lead-title">Comece de<br><em>onde você está.</em></h1>
+        <p class="lead-intro-copy">Deixe seus dados. Um treinador da Propulse entra em contato para entender sua rotina e conversar sobre o próximo passo.</p>
+        <span class="lead-index">PROPULSE RUNNING / 2026</span>
+      </section>
+
+      <section class="lead-panel" aria-labelledby="lead-form-title">
+        <div class="lead-panel-top"><span>01 / Interesse</span><span>Dados iniciais</span></div>
+        <h2 id="lead-form-title">Pré-cadastro</h2>
+        <p class="lead-panel-intro">Uma conversa começa com três informações.</p>
+        <form class="lead-form" action="https://formspree.io/f/SEU_FORM_ID" method="post" data-lead-form>
+          <input type="hidden" name="_subject" value="Novo pré-cadastro Propulse">
+          <div class="lead-field"><label for="lead-name">Nome completo</label><input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required></div>
+          <div class="lead-field"><label for="lead-email">E-mail</label><input id="lead-email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required></div>
+          <div class="lead-field"><label for="lead-phone">Telefone</label><input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" pattern="[0-9() +.-]{10,}" required></div>
+          <button class="lead-submit" type="submit">Quero conversar <span>↗</span></button>
+          <p class="lead-form-status" data-lead-status role="status" aria-live="polite"></p>
+        </form>
+        <p class="lead-privacy">Seus dados serão usados apenas para este primeiro contato.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="lead-footer"><span>PROPULSE / RUNNING</span><a href="mailto:propulserunning@gmail.com">propulserunning@gmail.com</a></footer>
+</body>
+</html>

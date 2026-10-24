@@ -33,6 +33,100 @@ yearElements.forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
 
+function renderResultCard(card) {
+  const { distance, before, after, image, name } = card.dataset;
+  const requiredValues = [distance, before, after, image, name];
+
+  if (requiredValues.some((value) => !value)) {
+    console.warn('Card de resultado incompleto:', card);
+    return;
+  }
+
+  const imageContainer = document.createElement('div');
+  imageContainer.className = 'results-athlete-image';
+
+  const athleteImage = document.createElement('img');
+  athleteImage.src = image;
+  athleteImage.alt = `${name} após evolução na corrida`;
+  athleteImage.style.setProperty('--result-image-position', card.dataset.position || '50% center');
+  athleteImage.style.setProperty('--result-image-scale', card.dataset.scale || '1');
+
+  const header = document.createElement('header');
+  header.className = 'results-athlete-header';
+
+  const distanceElement = document.createElement('div');
+  distanceElement.className = 'results-athlete-distance compact-distance';
+  const distanceValue = document.createElement('strong');
+  distanceValue.textContent = distance;
+  distanceElement.append(distanceValue);
+
+  const timeElement = document.createElement('div');
+  timeElement.className = 'results-athlete-time compact-time';
+  const timeValues = document.createElement('strong');
+  const beforeValue = document.createElement('span');
+  beforeValue.textContent = before;
+  const arrow = document.createElement('i');
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↓';
+  const afterValue = document.createElement('span');
+  afterValue.textContent = after;
+  timeValues.append(beforeValue, arrow, afterValue);
+  timeElement.append(timeValues);
+
+  header.append(distanceElement, timeElement);
+
+  const caption = document.createElement('figcaption');
+  const nameValue = document.createElement('strong');
+  nameValue.textContent = name;
+  caption.append(nameValue);
+
+  imageContainer.append(athleteImage, header, caption);
+  card.replaceChildren(imageContainer);
+}
+
+document.querySelectorAll('[data-result-card]').forEach(renderResultCard);
+
+const leadForm = document.querySelector('[data-lead-form]');
+
+if (leadForm) {
+  const leadStatus = leadForm.querySelector('[data-lead-status]');
+  const leadSubmit = leadForm.querySelector('button[type="submit"]');
+  const leadPhone = leadForm.querySelector('input[name="phone"]');
+
+  leadPhone.addEventListener('input', () => {
+    const digits = leadPhone.value.replace(/\D/g, '').slice(0, 11);
+    if (digits.length <= 10) {
+      leadPhone.value = digits.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3').replace(/-$/, '');
+      return;
+    }
+    leadPhone.value = digits.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3').replace(/-$/, '');
+  });
+
+  leadForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const endpoint = leadForm.getAttribute('action');
+
+    if (!endpoint || endpoint.includes('SEU_FORM_ID')) {
+      leadStatus.textContent = 'O formulário está pronto. Falta configurar o endpoint do Formspree.';
+      return;
+    }
+
+    leadSubmit.disabled = true;
+    leadStatus.textContent = 'Enviando seus dados...';
+
+    try {
+      const response = await fetch(endpoint, { method: 'POST', body: new FormData(leadForm), headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error('Falha no envio');
+      leadForm.reset();
+      leadStatus.textContent = 'Recebemos seus dados. Em breve um treinador fala com você.';
+    } catch (error) {
+      leadStatus.textContent = 'Não foi possível enviar agora. Tente novamente em instantes.';
+    } finally {
+      leadSubmit.disabled = false;
+    }
+  });
+}
+
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {

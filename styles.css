@@ -13,6 +13,49 @@
   --max: 1440px;
 }
 
+/* Lead capture */
+.lead-page { min-height: 100vh; color: var(--paper); background: var(--ink); }
+.lead-header { display: flex; align-items: center; justify-content: space-between; width: min(100%, var(--max)); margin-inline: auto; padding: 1.5rem var(--gutter); }
+.lead-header .brand-logo-crop img { filter: brightness(0) invert(1); }
+.lead-header-note, .lead-index, .lead-panel-top, .lead-privacy, .lead-footer { font-family: var(--mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; }
+.lead-header-note { color: #92928d; }
+.lead-main { width: min(100%, var(--max)); margin-inline: auto; padding: clamp(4rem, 10vw, 9rem) var(--gutter) clamp(4rem, 8vw, 7rem); }
+.lead-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(22rem, .9fr); gap: clamp(3rem, 9vw, 9rem); align-items: center; }
+.lead-intro .eyebrow { color: #92928d; }
+.lead-intro h1 { max-width: 38rem; margin: 0 0 2.5rem; font-size: clamp(4rem, 8vw, 8.5rem); }
+.lead-intro h1 em { color: #aaa9a2; }
+.lead-intro-copy { max-width: 23rem; margin-bottom: 4rem; color: #aaa9a2; font-size: .9rem; line-height: 1.75; }
+.lead-index { color: #686863; }
+.lead-panel { position: relative; color: var(--ink); background: var(--paper); padding: clamp(1.5rem, 4vw, 3.2rem); box-shadow: 1.4rem 1.4rem 0 rgba(243, 243, 240, .08); }
+.lead-panel-top { display: flex; justify-content: space-between; margin-bottom: clamp(3rem, 7vw, 5rem); color: var(--muted); }
+.lead-panel h2 { margin: 0 0 .8rem; font-size: clamp(2.5rem, 5vw, 4.5rem); }
+.lead-panel-intro { margin-bottom: 2.5rem; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+.lead-form { display: grid; gap: 1.25rem; }
+.lead-field { display: grid; gap: .45rem; }
+.lead-field label { font-family: var(--mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; }
+.lead-field input { width: 100%; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: .8rem 0; color: var(--ink); background: transparent; font: inherit; font-size: .9rem; outline: 0; }
+.lead-field input::placeholder { color: #999991; }
+.lead-field input:focus { border-color: var(--ink); box-shadow: 0 1px 0 var(--ink); }
+.lead-submit { display: inline-flex; align-items: center; justify-content: space-between; margin-top: 1.2rem; border: 1px solid var(--ink); padding: 1rem 1.1rem; color: var(--paper); background: var(--ink); font: inherit; font-size: .75rem; font-weight: 700; cursor: pointer; transition: transform .18s ease, background .18s ease; }
+.lead-submit:hover:not(:disabled) { transform: translateY(-2px); background: #30302e; }
+.lead-submit:disabled { cursor: wait; opacity: .6; }
+.lead-form-status { min-height: 1.3em; margin: 0; color: var(--muted); font-size: .75rem; line-height: 1.4; }
+.lead-privacy { margin: 2rem 0 0; color: #92928d; line-height: 1.5; text-transform: none; }
+.lead-footer { display: flex; justify-content: space-between; width: min(100%, var(--max)); margin-inline: auto; border-top: 1px solid var(--dark-line); padding: 1.2rem var(--gutter) 1.5rem; color: #686863; }
+.lead-footer a:hover { color: var(--paper); }
+
+@media (max-width: 800px) {
+  .lead-header { padding-top: 1.1rem; padding-bottom: 1.1rem; }
+  .lead-header .brand-logo-crop { width: 9rem; }
+  .lead-header-note { font-size: .55rem; }
+  .lead-main { padding-top: 3rem; }
+  .lead-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .lead-intro h1 { font-size: clamp(3.8rem, 16vw, 6.5rem); }
+  .lead-intro-copy { margin-bottom: 2rem; }
+  .lead-panel { box-shadow: .7rem .7rem 0 rgba(243, 243, 240, .08); }
+  .lead-footer { display: grid; gap: .6rem; }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
@@ -770,6 +813,54 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
 .prototype-company-fiftysix .results-athlete-card img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 .prototype-company-fiftysix .results-athlete-image figcaption { position: absolute; z-index: 2; right: 1rem; bottom: 1rem; left: 1rem; border-top: 0; padding: 0; }
 .prototype-company-fiftysix .results-athlete-card figcaption strong { color: var(--paper); font-size: clamp(.9rem, 1.7vw, 1.25rem); letter-spacing: -.04em; }
+.prototype-company-fiftyseven .ribbon-distance { position: relative; z-index: 3; margin: .55rem 0 0 .55rem; padding: .55rem .8rem; background: var(--paper); color: var(--ink); }
+.prototype-company-fiftyseven .ribbon-distance strong { color: var(--ink); }
+.prototype-company-fiftyseven .ribbon-distance::after { position: absolute; top: 0; right: -.55rem; border-top: 1.15rem solid var(--paper); border-right: .55rem solid transparent; border-bottom: 1.15rem solid var(--paper); content: ''; }
+.prototype-company-fiftyeight .corner-distance { position: relative; z-index: 3; margin: .55rem 0 0; border-left: 2px solid var(--paper); border-radius: 0 .7rem .7rem 0; padding: .6rem .8rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-fiftyeight .corner-distance strong { color: var(--paper); }
+.prototype-company-fiftynine .capsule-distance { position: relative; z-index: 3; margin: .65rem 0 0 .65rem; border: 1px solid var(--paper); border-radius: 999px; padding: .45rem .8rem; background: rgba(17, 17, 17, .66); }
+.prototype-company-fiftynine .capsule-distance strong { color: var(--paper); }
+.prototype-company-sixty .framed-distance { position: relative; z-index: 3; margin: .65rem 0 0 .65rem; border: 2px solid var(--paper); padding: .55rem .75rem; background: rgba(17, 17, 17, .25); }
+.prototype-company-sixty .framed-distance strong { color: var(--paper); }
+.prototype-company-sixty .framed-time { position: relative; z-index: 3; min-height: 9.2rem; margin: .65rem .65rem 0 0; border: 2px solid var(--paper); padding: .75rem .8rem; background: rgba(17, 17, 17, .25); }
+.prototype-company-sixty .framed-time strong { color: var(--paper); }
+.prototype-company-sixtyone .compact-distance { margin: 0; padding: .45rem .6rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyone .compact-time { min-height: 0; margin: 0; padding: .55rem .65rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtytwo .results-athlete-image .results-athlete-header { display: flex; justify-content: space-around; background: transparent; }
+.prototype-company-sixtytwo .results-athlete-header > div { padding: 0; }
+.prototype-company-sixtytwo .compact-distance { margin: 0; padding: .45rem .6rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtytwo .compact-time { min-height: 0; margin: 0; padding: .55rem .65rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtythree .results-athlete-image .results-athlete-header { display: flex; justify-content: space-around; background: transparent; }
+.prototype-company-sixtythree .compact-distance { margin: 0; padding: .65rem .75rem .65rem .75rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtythree .compact-time { min-height: 0; margin: 0; padding: .65rem .75rem .65rem .75rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyfour .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-sixtyfour .compact-distance { margin: 0; padding: .65rem .75rem .65rem .75rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyfour .compact-time { min-height: 0; margin: 0; padding: .65rem .75rem .65rem .75rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyfive .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-sixtyfive .compact-distance { margin: 0; padding: .35rem .4rem .35rem .4rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyfive .compact-time { min-height: 0; margin: 0; padding: .35rem .4rem .35rem .4rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtysix .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-sixtysix .results-athlete-header > div { padding: .35rem .4rem .35rem .4rem; }
+.prototype-company-sixtysix .compact-distance { margin: 0; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtysix .compact-time { min-height: 0; margin: 0; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyseven .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-sixtyseven .results-athlete-header > div { padding: .35rem .4rem .35rem .4rem; }
+.prototype-company-sixtyseven .compact-distance { margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyseven .compact-time { min-height: 0; margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyeight .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-sixtyeight .results-athlete-header > div { padding: .35rem .4rem .35rem .4rem; }
+.prototype-company-sixtyeight .compact-distance { margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtyeight .compact-time { min-height: 0; margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtynine .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-sixtynine .results-athlete-header > div { padding: .35rem .4rem .35rem .4rem; }
+.prototype-company-sixtynine .compact-distance { margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-sixtynine .compact-time { min-height: 0; margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-seventy .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-seventy .results-athlete-header > div { padding: .35rem .4rem .35rem .4rem; }
+.prototype-company-seventy .results-athlete-image { background: #1b1b1a; }
+.prototype-company-seventy .results-athlete-card img { object-position: var(--result-image-position, 50% center); transform: scale(var(--result-image-scale, 1)); transform-origin: center; }
+.prototype-company-seventy .compact-distance { margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-seventy .compact-time { min-height: 0; margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
 .prototype-company-fiftythree .about-company,
 .prototype-company-fiftythree .method-cards-section,
 .prototype-company-fiftythree .about-us-section,
@@ -933,6 +1024,27 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
+@media (max-width: 800px) {
+  .prototype-company-sixtynine.prototype-twentytwo .site-nav,
+  .prototype-company-seventy.prototype-twentytwo .site-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(68vw, 18rem);
+    height: 100dvh;
+    min-height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    background: rgba(17, 17, 17, .94);
+    color: var(--paper);
+    box-shadow: -1.5rem 0 3rem rgba(0, 0, 0, .28);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+
+  .prototype-company-sixtynine.prototype-twentytwo .menu-toggle,
+  .prototype-company-seventy.prototype-twentytwo .menu-toggle { position: relative; z-index: 101; }
+}
+
 /* Mobile menu comparisons */
 @media (max-width: 800px) {
   .prototype-sixteen .site-nav {
@@ -946,7 +1058,7 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
     font-size: 1rem;
     line-height: 1.1;
     box-shadow: -5rem 0 5rem rgba(0, 0, 0, .36);
-  }
+}
 
   .prototype-sixteen .site-nav .nav-cta { margin-top: 1rem; }
 
