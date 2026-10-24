@@ -742,14 +742,40 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
 .prototype-company-fiftyfour .service-item > b { color: #92928d; }
 .prototype-company-fiftyfour .service-item h3 { color: var(--paper); }
 .prototype-company-fiftyfour .service-item p { color: #a2a29d; }
+.prototype-company-fiftyfour .services-check-list { margin: 0; padding: 0; list-style: none; }
+.prototype-company-fiftyfour .service-check-item { grid-template-columns: 2rem 1fr; }
+.prototype-company-fiftyfour .service-check-item h3 { margin: 0; }
+.prototype-company-fiftyfour .service-check { color: var(--paper); font-family: var(--sans); font-size: 1.1rem; font-weight: 700; }
+.prototype-company-fiftyfive .services-card { border: 1px solid #454541; border-radius: 1.15rem; padding: clamp(1.4rem, 3vw, 2.5rem); background: #1b1b1a; }
+.prototype-company-fiftyfive .services-card > h3 { margin: 0 0 2rem; color: var(--paper); font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -.08em; line-height: .9; }
+.prototype-company-fiftyfive .services-check-list { border-top: 0; }
+.prototype-company-fiftyfive .service-check-item { border: 0; padding: 1.1rem 0; }
+.prototype-company-fiftyfive .service-check-item h4 { margin: 0; color: var(--paper); font-size: clamp(.95rem, 1.7vw, 1.25rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.35; }
+.prototype-company-fiftyfive .service-check { color: #92928d; }
+.prototype-company-fiftysix .results-athlete-card { overflow: hidden; border: 1px solid #454541; border-radius: 1.15rem; background: #1b1b1a; }
+.prototype-company-fiftysix .before-after-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.prototype-company-fiftysix .results-athlete-image { position: relative; }
+.prototype-company-fiftysix .results-athlete-image::after { position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgba(17, 17, 17, .55) 0%, rgba(17, 17, 17, .05) 35%, rgba(17, 17, 17, .82) 100%); content: ''; pointer-events: none; }
+.prototype-company-fiftysix .results-athlete-header { display: grid; grid-template-columns: 1fr 1.35fr; }
+.prototype-company-fiftysix .results-athlete-image .results-athlete-header { position: absolute; z-index: 2; top: 0; right: 0; left: 0; background: rgba(17, 17, 17, .2); }
+.prototype-company-fiftysix .results-athlete-header > div { display: grid; gap: .45rem; padding: 1rem 1.2rem; }
+.prototype-company-fiftysix .results-athlete-header > div + div { border-left: 0; }
+.prototype-company-fiftysix .results-athlete-header strong { color: var(--paper); font-size: clamp(1.15rem, 2.4vw, 2rem); letter-spacing: -.06em; line-height: 1; }
+.prototype-company-fiftysix .results-athlete-distance { align-content: start; justify-items: start; }
+.prototype-company-fiftysix .results-athlete-distance strong { white-space: nowrap; }
+.prototype-company-fiftysix .results-athlete-time { min-height: 8rem; align-content: start; justify-items: center; }
+.prototype-company-fiftysix .results-athlete-time strong { display: grid; justify-items: center; gap: .2rem; }
+.prototype-company-fiftysix .results-athlete-time span { color: var(--paper); font-family: var(--sans); font-size: clamp(1.15rem, 2.4vw, 2rem); letter-spacing: -.06em; line-height: 1; white-space: nowrap; }
+.prototype-company-fiftysix .results-athlete-header i { color: #92928d; font-style: normal; line-height: 1; }
+.prototype-company-fiftysix .results-athlete-card img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.prototype-company-fiftysix .results-athlete-image figcaption { position: absolute; z-index: 2; right: 1rem; bottom: 1rem; left: 1rem; border-top: 0; padding: 0; }
+.prototype-company-fiftysix .results-athlete-card figcaption strong { color: var(--paper); font-size: clamp(.9rem, 1.7vw, 1.25rem); letter-spacing: -.04em; }
 .prototype-company-fiftythree .about-company,
 .prototype-company-fiftythree .method-cards-section,
 .prototype-company-fiftythree .about-us-section,
 .prototype-company-fiftythree .services-section,
 .prototype-company-fiftythree .results-section { padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem); }
-.prototype-company-fiftythree .about-us-section,
-.prototype-company-fiftythree .services-section { color: var(--paper); background: var(--ink); }
-.prototype-company-fiftythree .about-us-section { background: linear-gradient(180deg, #252522 0%, #111 100%); }
+.prototype-company-fiftythree .services-section { color: var(--paper); background: #252522; }
 .prototype-company-fiftythree .services-section .section-label,
 .prototype-company-fiftythree .services-section .section-label span { color: #92928d; }
 .prototype-company-fiftythree .services-list { border-color: var(--dark-line); }
@@ -1069,5 +1095,6 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
    .service-item { grid-template-columns: 2.4rem 1fr auto; }
    .results-heading { display: block; margin-bottom: 3rem; }
    .results-heading p { margin-top: -1.5rem; }
-   .before-after-grid { grid-template-columns: 1fr; gap: .75rem; }
-   }
+     .before-after-grid { grid-template-columns: 1fr; gap: .75rem; }
+     .prototype-company-fiftysix .before-after-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+    }
