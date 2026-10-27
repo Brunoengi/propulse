@@ -861,6 +861,12 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
 .prototype-company-seventy .results-athlete-card img { object-position: var(--result-image-position, 50% center); transform: scale(var(--result-image-scale, 1)); transform-origin: center; }
 .prototype-company-seventy .compact-distance { margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
 .prototype-company-seventy .compact-time { min-height: 0; margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-seventyone .results-athlete-image .results-athlete-header { display: flex; align-items: flex-start; justify-content: space-around; background: transparent; }
+.prototype-company-seventyone .results-athlete-header > div { padding: .35rem .4rem .35rem .4rem; }
+.prototype-company-seventyone .results-athlete-image { background: #1b1b1a; }
+.prototype-company-seventyone .results-athlete-card img { object-position: var(--result-image-position, 50% center); transform: scale(var(--result-image-scale, 1)); transform-origin: center; }
+.prototype-company-seventyone .compact-distance { margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
+.prototype-company-seventyone .compact-time { min-height: 0; margin: 0; border-radius: 0 0 .35rem .35rem; background: rgba(17, 17, 17, .72); }
 .prototype-company-fiftythree .about-company,
 .prototype-company-fiftythree .method-cards-section,
 .prototype-company-fiftythree .about-us-section,
@@ -883,6 +889,52 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
 .prototype-company-fiftythree .results-section .section-label span { color: var(--paper); }
 .prototype-company-fiftythree .method-cta { padding-top: clamp(4rem, 8vw, 7rem); }
 .prototype-company-fiftythree .method-cta .button-dark { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+
+/* Prototype 71: alternate the numbered sections and finish with a white CTA. */
+.prototype-company-seventyone .about-company { color: var(--paper); background: #111; }
+.prototype-company-seventyone .about-company .section-label { color: #92928d; }
+.prototype-company-seventyone .about-company .section-label span { color: var(--paper); }
+
+.prototype-company-seventyone .method-cards-section { color: var(--paper); background: #252522; }
+.prototype-company-seventyone .method-cards-section .section-label { color: #92928d; }
+.prototype-company-seventyone .method-cards-section .section-label span { color: var(--paper); }
+.prototype-company-seventyone .method-cards-section .method-card { color: var(--paper); border-color: #454541; background: #1b1b1a; }
+.prototype-company-seventyone .method-cards-section .method-card-number { color: var(--paper); }
+.prototype-company-seventyone .method-cards-section .method-card-icon { stroke: #999994; }
+.prototype-company-seventyone .method-cards-section .method-card-rule { background: rgba(243,243,240,.7); }
+.prototype-company-seventyone .method-cards-section .method-card h3 { color: var(--paper); }
+.prototype-company-seventyone .method-cards-section .method-card p { color: #a2a29d; }
+
+.prototype-company-seventyone .about-us-section { color: var(--paper); background: #111; }
+.prototype-company-seventyone .about-us-section .section-label { color: #92928d; }
+.prototype-company-seventyone .about-us-section .section-label span { color: var(--paper); }
+
+.prototype-company-seventyone .services-section { color: var(--paper); background: #252522; }
+.prototype-company-seventyone .services-section .section-label { color: #92928d; }
+.prototype-company-seventyone .services-section .section-label span { color: var(--paper); }
+.prototype-company-seventyone .services-section .services-card { border-color: #454541; background: #1b1b1a; }
+.prototype-company-seventyone .services-section .services-card > h3 { color: var(--paper); }
+.prototype-company-seventyone .services-section .services-list { border-color: var(--dark-line); }
+.prototype-company-seventyone .services-section .service-check-item { border-color: var(--dark-line); }
+.prototype-company-seventyone .services-section .service-check-item h4 { color: var(--paper); }
+.prototype-company-seventyone .services-section .service-check { color: #92928d; }
+
+.prototype-company-seventyone .results-section { color: var(--paper); background: #111; }
+.prototype-company-seventyone .results-section .section-label { color: #92928d; }
+.prototype-company-seventyone .results-section .section-label span { color: var(--paper); }
+
+.prototype-company-seventyone .method-cta { color: var(--ink); background: #fff; }
+.prototype-company-seventyone .method-cta .eyebrow { color: var(--muted); }
+
+/* Prototype 72: let each method card end with its content. */
+.prototype-company-seventytwo .method-cards-fortythree .method-card-grid { align-items: start; }
+.prototype-company-seventytwo .method-cards-fortythree .method-card { min-height: 0; height: auto; align-self: start; }
+
+/* Prototype 74: keep the CTA copy in its intended three lines. */
+.prototype-company-seventyfour .method-cta h2 > span { display: block; white-space: nowrap; }
+@media (max-width: 800px) {
+  .prototype-company-seventyfour .method-cta h2 { font-size: clamp(2.8rem, 8vw, 8.4rem); }
+}
 
 .preview-ten { background: #171715; }
 .preview-eleven { background: #242420; }
@@ -1026,7 +1078,8 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
 
 @media (max-width: 800px) {
   .prototype-company-sixtynine.prototype-twentytwo .site-nav,
-  .prototype-company-seventy.prototype-twentytwo .site-nav {
+  .prototype-company-seventy.prototype-twentytwo .site-nav,
+  .prototype-company-seventyone.prototype-twentytwo .site-nav {
     position: fixed;
     inset: 0 0 0 auto;
     width: min(68vw, 18rem);
@@ -1042,7 +1095,8 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
   }
 
   .prototype-company-sixtynine.prototype-twentytwo .menu-toggle,
-  .prototype-company-seventy.prototype-twentytwo .menu-toggle { position: relative; z-index: 101; }
+  .prototype-company-seventy.prototype-twentytwo .menu-toggle,
+  .prototype-company-seventyone.prototype-twentytwo .menu-toggle { position: relative; z-index: 101; }
 }
 
 /* Mobile menu comparisons */
