@@ -114,9 +114,10 @@ if (leadForm) {
   leadForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const endpoint = leadForm.getAttribute('action');
+    const accessKey = leadForm.querySelector('input[name="access_key"]')?.value;
 
-    if (!endpoint || endpoint.includes('SEU_FORM_ID')) {
-      leadStatus.textContent = 'O formulário está pronto. Falta configurar o endpoint do Formspree.';
+    if (!endpoint || !accessKey) {
+      leadStatus.textContent = 'O formulário ainda não está configurado.';
       return;
     }
 
@@ -125,7 +126,8 @@ if (leadForm) {
 
     try {
       const response = await fetch(endpoint, { method: 'POST', body: new FormData(leadForm), headers: { Accept: 'application/json' } });
-      if (!response.ok) throw new Error('Falha no envio');
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error('Falha no envio');
       leadForm.reset();
       leadStatus.textContent = 'Recebemos seus dados. Em breve um treinador fala com você.';
     } catch (error) {

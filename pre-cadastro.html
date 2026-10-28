@@ -27,8 +27,11 @@
         <div class="lead-panel-top"><span>01 / Interesse</span><span>Dados iniciais</span></div>
         <h2 id="lead-form-title">Pré-cadastro</h2>
         <p class="lead-panel-intro">Uma conversa começa com três informações.</p>
-        <form class="lead-form" action="https://formspree.io/f/SEU_FORM_ID" method="post" data-lead-form>
-          <input type="hidden" name="_subject" value="Novo pré-cadastro Propulse">
+        <form class="lead-form" action="https://api.web3forms.com/submit" method="post" data-lead-form>
+          <input type="hidden" name="access_key" value="60d840ca-ea3c-4322-912f-6dd2ae51412b">
+          <input type="hidden" name="subject" value="Novo pré-cadastro Propulse">
+          <input type="hidden" name="from_name" value="Propulse Running">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
           <div class="lead-field"><label for="lead-name">Nome completo</label><input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required></div>
           <div class="lead-field"><label for="lead-email">E-mail</label><input id="lead-email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required></div>
           <div class="lead-field"><label for="lead-phone">Telefone</label><input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" pattern="[0-9() +.-]{10,}" required></div>
