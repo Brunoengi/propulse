@@ -936,6 +936,24 @@ h1 em, h2 em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.
   .prototype-company-seventyfour .method-cta h2 { font-size: clamp(2.8rem, 8vw, 8.4rem); }
 }
 
+/* Prototype 75: fill the cards and keep the athlete framing toward the left. */
+.prototype-company-seventyfive .results-athlete-card img { transform: scale(var(--result-image-scale, 1)); transform-origin: right center; }
+.prototype-company-seventyfive .results-athlete-time { padding: .3rem .35rem; }
+.prototype-company-seventyfive .results-athlete-time strong { gap: .12rem; }
+.prototype-company-seventyfive .results-athlete-time span { font-size: clamp(1rem, 2vw, 1.7rem); }
+.prototype-company-seventyfive .results-athlete-time i { color: #fff; }
+.prototype-company-seventyfive .results-athlete-image .results-athlete-header { justify-content: flex-end; }
+.prototype-company-seventyfive .results-athlete-image figcaption { display: flex; align-items: center; justify-content: flex-start; gap: .5rem; right: .75rem; bottom: .75rem; left: .75rem; }
+.prototype-company-seventyfive .results-athlete-image figcaption > strong { min-width: 0; }
+.prototype-company-seventyfive .results-athlete-card figcaption .results-athlete-distance { display: flex; width: 2.35rem; height: 1.25rem; flex: 0 0 2.35rem; align-items: center; justify-content: center; margin: 0; border-radius: 999px; padding: 0; color: #111; }
+.prototype-company-seventyfive .results-athlete-card figcaption .results-athlete-distance strong { display: block; width: auto; height: auto; color: #fff; font-size: .48rem; letter-spacing: -.05em; line-height: 1; text-align: center; white-space: nowrap; }
+.prototype-company-seventyfive .distance-3-km { background: #3f8f5a; }
+.prototype-company-seventyfive .distance-5-km { background: #a34242; }
+.prototype-company-seventyfive .distance-10-km { background: #3f75a6; }
+.prototype-company-seventyfive .results-athlete-time.distance-3-km { background: linear-gradient(135deg, #294d35 0%, #111 82%); }
+.prototype-company-seventyfive .results-athlete-time.distance-5-km { background: linear-gradient(135deg, #5a292b 0%, #111 82%); }
+.prototype-company-seventyfive .results-athlete-time.distance-10-km { background: linear-gradient(135deg, #29435f 0%, #111 82%); }
+
 .preview-ten { background: #171715; }
 .preview-eleven { background: #242420; }
 .preview-twelve { background: #111110; }

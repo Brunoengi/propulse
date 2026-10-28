@@ -35,6 +35,7 @@ yearElements.forEach((element) => {
 
 function renderResultCard(card) {
   const { distance, before, after, image, name } = card.dataset;
+  const isPrototype75 = Boolean(card.closest('.prototype-company-seventyfive'));
   const requiredValues = [distance, before, after, image, name];
 
   if (requiredValues.some((value) => !value)) {
@@ -56,12 +57,15 @@ function renderResultCard(card) {
 
   const distanceElement = document.createElement('div');
   distanceElement.className = 'results-athlete-distance compact-distance';
+  const distanceClass = `distance-${distance.toLowerCase().replace(/\s+/g, '-')}`;
+  distanceElement.classList.add(distanceClass);
   const distanceValue = document.createElement('strong');
   distanceValue.textContent = distance;
   distanceElement.append(distanceValue);
 
   const timeElement = document.createElement('div');
   timeElement.className = 'results-athlete-time compact-time';
+  timeElement.classList.add(distanceClass);
   const timeValues = document.createElement('strong');
   const beforeValue = document.createElement('span');
   beforeValue.textContent = before;
@@ -73,12 +77,17 @@ function renderResultCard(card) {
   timeValues.append(beforeValue, arrow, afterValue);
   timeElement.append(timeValues);
 
-  header.append(distanceElement, timeElement);
+  if (isPrototype75) {
+    header.append(timeElement);
+  } else {
+    header.append(distanceElement, timeElement);
+  }
 
   const caption = document.createElement('figcaption');
   const nameValue = document.createElement('strong');
   nameValue.textContent = name;
   caption.append(nameValue);
+  if (isPrototype75) caption.append(distanceElement);
 
   imageContainer.append(athleteImage, header, caption);
   card.replaceChildren(imageContainer);
