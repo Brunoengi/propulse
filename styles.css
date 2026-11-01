@@ -19,9 +19,9 @@
 .lead-header .brand-logo-crop img { filter: brightness(0) invert(1); }
 .lead-header-note, .lead-privacy, .lead-footer { font-family: var(--mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; }
 .lead-header-note { color: #92928d; }
-.lead-main { width: min(100%, var(--max)); flex: 1; margin-inline: auto; padding: clamp(2.5rem, 6vw, 5rem) var(--gutter) clamp(2.5rem, 5vw, 4.5rem); }
-.lead-grid { display: flex; justify-content: center; }
-.lead-panel { position: relative; width: min(100%, 42rem); color: var(--ink); background: var(--paper); padding: clamp(1.5rem, 4vw, 3.2rem); box-shadow: 1.4rem 1.4rem 0 rgba(243, 243, 240, .08); }
+.lead-main { display: flex; width: min(100%, var(--max)); flex: 1; min-height: 0; align-items: center; justify-content: center; margin-inline: auto; padding: 0 var(--gutter); }
+.lead-grid { display: flex; width: 100%; justify-content: center; }
+.lead-panel { position: relative; width: min(100%, 42rem); color: var(--ink); background: var(--paper); padding: clamp(1.5rem, 4vw, 3.2rem); box-shadow: .7rem .7rem 0 rgba(243, 243, 240, .08); }
 .lead-panel h2 { margin: 0 0 .8rem; font-size: clamp(2.5rem, 5vw, 4.5rem); }
 .lead-panel-intro { margin-bottom: 2.5rem; color: var(--muted); font-size: .8rem; line-height: 1.5; }
 .lead-form { display: grid; gap: 1.25rem; }
@@ -43,8 +43,6 @@
   .lead-header { padding-top: 1.1rem; padding-bottom: 1.1rem; }
   .lead-header .brand-logo-crop { width: 9rem; }
   .lead-header-note { font-size: .55rem; }
-  .lead-main { padding-top: 2rem; padding-bottom: 2.5rem; }
-  .lead-panel { box-shadow: .7rem .7rem 0 rgba(243, 243, 240, .08); }
   .lead-footer { flex-direction: row; }
 }
 
